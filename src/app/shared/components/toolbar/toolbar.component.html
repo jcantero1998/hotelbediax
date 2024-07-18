@@ -1,9 +1,9 @@
 <mat-toolbar color="primary">
   <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-    <mat-icon>menu</mat-icon>
+    <mat-icon [routerLink]="'/destinations'">home</mat-icon>
   </button>
   <span>Hotelbediax</span>
   <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-    <mat-icon>info</mat-icon>
+    <mat-icon (click)="downloadPDF()">info</mat-icon>
   </button>
 </mat-toolbar>

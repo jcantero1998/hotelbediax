@@ -1,1 +1,19 @@
-<p>destinations works!</p>
+<mat-card appearance="outlined">
+  <mat-card-header>
+    <mat-card-title-group>
+      <mat-card-title>Destinations</mat-card-title>
+      <button mat-icon-button aria-label="add destination" [routerLink]="'/newDestination'">
+        <mat-icon>add</mat-icon>
+      </button>
+    </mat-card-title-group>
+  </mat-card-header>
+  <mat-card-content>
+
+    <app-destinations-filter>
+    </app-destinations-filter>
+
+    <app-destinations-table>
+    </app-destinations-table>
+
+  </mat-card-content>
+</mat-card>
