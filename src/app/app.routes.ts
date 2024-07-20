@@ -7,11 +7,6 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/destinations/destinations.component').then(c => c.DestinationsComponent)
   },
   {
-    path: 'newDestination',
-    title: 'New destination',
-    loadComponent: () => import('./pages/new-destination/new-destination.component').then(c => c.NewDestinationComponent)
-  },
-  {
     path: '',
     redirectTo: 'destinations',
     pathMatch: 'full',

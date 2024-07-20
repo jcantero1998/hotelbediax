@@ -1,0 +1,44 @@
+<div mat-dialog-title>
+  <h1>Destination form</h1>
+</div>
+<form [formGroup]="destinationForm" (ngSubmit)="onSubmit()">
+  <div mat-dialog-content class="content">
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput type="text" formControlName="Name">
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Description</mat-label>
+        <input matInput type="text" formControlName="Description">
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Country Code</mat-label>
+        <input matInput type="text" formControlName="CountryCode">
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Type</mat-label>
+        <mat-select formControlName="Type">
+          @for (type of destinationTypes; track type) {
+            <mat-option [value]="type.value">{{type.key}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+  </div>
+
+  <div mat-dialog-actions class="action">
+    <button mat-raised-button [mat-dialog-close]="false" type="button">Cancel</button>
+    <button [disabled]="!destinationForm.valid" mat-raised-button color="primary" type="submit">{{ getTitle() }}</button>
+  </div>
+</form>

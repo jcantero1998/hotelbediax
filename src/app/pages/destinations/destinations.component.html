@@ -2,18 +2,12 @@
   <mat-card-header>
     <mat-card-title-group>
       <mat-card-title>Destinations</mat-card-title>
-      <button mat-icon-button aria-label="add destination" [routerLink]="'/newDestination'">
+      <button mat-icon-button aria-label="add destination" (click)="onClickAddDestination()">
         <mat-icon>add</mat-icon>
       </button>
     </mat-card-title-group>
   </mat-card-header>
   <mat-card-content>
-
-    <app-destinations-filter>
-    </app-destinations-filter>
-
-    <app-destinations-table>
-    </app-destinations-table>
-
+    <app-destinations-table [data]="destinations()"/>
   </mat-card-content>
 </mat-card>
