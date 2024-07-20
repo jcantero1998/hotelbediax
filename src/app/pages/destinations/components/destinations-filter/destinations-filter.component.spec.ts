@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { DestinationsFilterComponent } from './destinations-filter.component';
 
 describe('DestinationsFilterComponent', () => {

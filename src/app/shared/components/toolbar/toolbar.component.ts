@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
+import { SidebarService } from '../../services/side-bar.service';
 const MATERIAL_MODULES = [MatToolbarModule, MatIconModule, MatButtonModule];
 
 @Component({
@@ -14,8 +15,14 @@ const MATERIAL_MODULES = [MatToolbarModule, MatIconModule, MatButtonModule];
 })
 export class ToolbarComponent {
 
+  private readonly _sidebarService = inject(SidebarService);
+
   downloadPDF() {
     window.open(`/assets/pdf/statement.pdf`, '_blank');
+  }
+
+  openSidebar() {
+    this._sidebarService.toggle();
   }
 
 }
