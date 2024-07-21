@@ -27,7 +27,7 @@ export class DestinationsTableComponent<T> implements OnInit {
 
   data = input.required<T[]>();
 
-  displayedColumns: ColumnKeys<Destination> = ['Id', 'Name','Description', 'CountryCode', 'Type', 'LastModify', 'action'];
+  displayedColumns: ColumnKeys<Destination> = ['Id', 'Flag', 'Name','Description', 'CountryCode', 'Type', 'LastModify', 'action'];
   sortableColumns: ColumnKeys<Destination> = ['Id', 'Name','Description', 'CountryCode', 'Type', 'LastModify'];
 
   dataSource = new MatTableDataSource<T>();
@@ -78,6 +78,10 @@ export class DestinationsTableComponent<T> implements OnInit {
     ).subscribe(deleteResult => {
       this._snackBar.showSnackBar(deleteResult ? 'Destination deleted successfully' : 'Destination not deleted');
     });
+  }
+
+  getFlagUrl(countryCode: string): string {
+    return this._destinationService.getFlagUrl(countryCode);
   }
 
 }

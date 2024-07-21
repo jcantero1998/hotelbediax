@@ -56,4 +56,7 @@ export class DestinationService {
     return of(true);
   }
 
+  getFlagUrl(countryCode: string): string {
+    return `https://flagsapi.com/${countryCode}/flat/64.png`;
+  }
 }

@@ -18,4 +18,5 @@ export interface Destination {
   Type: DestinationType;
   LastModify: Date;
   action?: string;
+  Flag?: string;
 }
