@@ -19,4 +19,5 @@ export interface Destination {
   LastModify: Date;
   action?: string;
   Flag?: string;
+  NextUrl?: string;
 }

@@ -29,6 +29,10 @@ export class DestinationService {
     return toObservable(this.destinations);
   }
 
+  //TODO: Implement pagination when using a real api
+  // getNextDestinations(): Observable<Destination[]> {
+  // }
+
   deleteDestinationById(id: number): Observable<boolean> {
     const index = this.destinations().findIndex(dest => dest.Id === id);
     if (index == -1) return of(false);
